@@ -20,7 +20,6 @@ static char const * const onFinishingKey = "onFinishingRef";
 
 
 
-//@dynamic aoTerminar;
 
 - (void) setOnFinishingKey:(void (^)())onFinishing {
     objc_setAssociatedObject(self, onFinishingKey, onFinishing, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
