@@ -1,9 +1,11 @@
 SLComposeViewController-Extended for iOS
 ================================
 
-Dismissing a SLComposeViewController did not work well on iOS. Some kind of bug.
+Try to dismiss a SLComposeViewController with a completion block and you will see that the block
+will not be called every time. Probably some kind of bug on iOS 6.
 
-This code extends the SLComposeViewController to make it work.
+This code extends the SLComposeViewController class to make the controller run a block on dismissal and baby, this works.
+😃
 
 The same principle can be applied to any UIViewController that is not running the completion
 block on dismissal.
