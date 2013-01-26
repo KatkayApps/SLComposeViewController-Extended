@@ -1,30 +1,33 @@
 //
-//  UIViewController+OnCompletionViewController.m
-//  photoshopCS6
+//  SLComposeViewController+OnFinishing.h
+//  
 //
-//  Created by Fireball on 26/01/13.
+//  Created by Magno Urbano
 //  Copyright (c) 2013 Magno Urbano. All rights reserved.
+//  http://www.addfone.com/iphoneapp/mu
 //
 
-#import "SLComposeViewController+OnCompletion.h"
+#import <UIKit/UIKit.h>
+#import "social/Social.h"
+#import "SLComposeViewController+OnFinishing.h"
 #import "social/Social.h"
 #import <objc/runtime.h>
 
 
-static char const * const aoTerminarKey = "AoTerminarRef";
+static char const * const onFinishingKey = "onFinishingRef";
 
-@implementation SLComposeViewController (OnCompletion)
+@implementation SLComposeViewController (OnFinishing)
 
 
 
 //@dynamic aoTerminar;
 
-- (void) setAoTerminar:(void (^)())aoTerminar {
-    objc_setAssociatedObject(self, aoTerminarKey, aoTerminar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void) setOnFinishingKey:(void (^)())onFinishing {
+    objc_setAssociatedObject(self, onFinishingKey, onFinishing, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void (^)())aoTerminar {
-    return objc_getAssociatedObject(self, aoTerminarKey);
+- (void (^)())onFinishing {
+    return objc_getAssociatedObject(self, onFinishingKey);
 }
 
 
@@ -34,7 +37,7 @@ static char const * const aoTerminarKey = "AoTerminarRef";
 {
     [super viewDidDisappear:animated];
 
-    self.aoTerminar();
+    self.onFinishing();
 
 }
 
