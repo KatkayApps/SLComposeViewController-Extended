@@ -1,4 +1,4 @@
-SLComposeViewController-Extended
+SLComposeViewController-Extended for iOS
 ================================
 
 Dismissing a SLComposeViewController did not work well on iOS. Some kind of bug.
@@ -39,7 +39,7 @@ Using this:
             animated:YES
           completion:NULL];
           
-that's it.
+that's it. Don't forget to import the social framework.
 
     
     
