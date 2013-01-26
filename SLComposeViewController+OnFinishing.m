@@ -31,14 +31,10 @@ static char const * const onFinishingKey = "onFinishingRef";
 }
 
 
-
-
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-
     self.onFinishing();
-
 }
 
 
