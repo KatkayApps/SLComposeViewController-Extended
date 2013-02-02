@@ -13,7 +13,11 @@ block on dismissal.
 Using this:
 
 1) import the header on your class
-2) create a SLComposeViewController normally.
+
+    #import "SLComposeViewController+OnFinishing.h"
+
+
+2) create a SLComposeViewController
 
     SLComposeViewController *controller = [SLComposeViewController
                   composeViewControllerForServiceType:SLServiceTypeFacebook]; // can be twitter or whatever
